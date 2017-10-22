@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/movie.ico</file>
+        <file>src/MainWindow.qml</file>
+        <file>icons/materialdesignicons-webfont.ttf</file>
+        <file>src/Icon.js</file>
+        <file>src/RatingWidget.qml</file>
+        <file>icons/star.svg</file>
+        <file>icons/star-half.svg</file>
+        <file>icons/star-outline.svg</file>
+        <file>src/UserRatingDialog.qml</file>
+    </qresource>
+</RCC>
