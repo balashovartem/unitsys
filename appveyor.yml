@@ -6,7 +6,7 @@ build_script:
   - mkdir build
   - cd build
   - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" ..
-  - cmake --build . --config Release
+  - cmake --build . --target install --config Release
   
 after_build:
   - cd c:\dev\install
