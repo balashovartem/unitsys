@@ -45,6 +45,7 @@ ApplicationWindow {
                 ToolButton {
                     font.pixelSize: 20
                     text: MdiFont.Icon.filterVariant
+                    font.family: "Material Design Icons"
 
                     onClicked: {
                         filter.visible = !filter.visible
@@ -257,6 +258,7 @@ ApplicationWindow {
 
                         opacity: 0.87
                         font.pixelSize: 16
+                        font.family: "Material Design Icons"
                         text: ""
                     }
                     Label {
@@ -377,6 +379,7 @@ ApplicationWindow {
 
                         opacity: 0.87
                         font.pixelSize: 16
+                        font.family: "Material Design Icons"
 
                         text: ""
                     }
@@ -457,6 +460,7 @@ ApplicationWindow {
 
                         opacity: 0.87
                         font.pixelSize: 16
+                        font.family: "Material Design Icons"
 
                         text: ""
                     }
@@ -537,6 +541,7 @@ ApplicationWindow {
 
                         opacity: 0.87
                         font.pixelSize: 16
+                        font.family: "Material Design Icons"
 
                         text: ""
                     }
@@ -911,6 +916,7 @@ ApplicationWindow {
             Layout.maximumWidth: 24
             opacity: 0.54
             font.pixelSize: 24
+            font.family: "Material Design Icons"
             text: MdiFont.Icon.pageFirst
             anchors.right: previous.left
             anchors.rightMargin: 24
@@ -927,6 +933,7 @@ ApplicationWindow {
             opacity: 0.54
             text: MdiFont.Icon.chevronLeft
             font.pixelSize: 24
+            font.family: "Material Design Icons"
             anchors.right: next.left
             anchors.rightMargin: 24
             anchors.verticalCenter: parent.verticalCenter
@@ -942,6 +949,7 @@ ApplicationWindow {
             opacity: 0.54
             text: MdiFont.Icon.chevronRight
             font.pixelSize: 24
+            font.family: "Material Design Icons"
             anchors.right: last.left
             anchors.rightMargin: 24
             anchors.verticalCenter: parent.verticalCenter
@@ -957,6 +965,7 @@ ApplicationWindow {
             opacity: 0.54
             text: MdiFont.Icon.pageLast
             font.pixelSize: 24
+            font.family: "Material Design Icons"
             anchors.right: parent.right
             anchors.rightMargin: 14
             anchors.verticalCenter: parent.verticalCenter
