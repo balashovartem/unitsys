@@ -1,0 +1,18 @@
+version: build{build}
+
+
+build_script:
+  - set PATH=C:\Qt\5.9.1\bin;
+  - cd build
+  - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" ..
+  - cmake --build . --config %BUILD_TYPE% 
+
+
+environment:
+  matrix:
+    - example: unitsys
+      name: win32
+      platform: mingw
+
+artifacts:
+  - path: 'c:/dev/install/bin/*'
