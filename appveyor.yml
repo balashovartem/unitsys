@@ -2,7 +2,7 @@ version: build{build}
 image: Visual Studio 2017
 
 build_script:
-  - set PATH=C:\Qt\5.9.1\bin;C:\MinGW\bin;%PATH%
+  - set PATH=C:\Qt\5.9.1\bin;C:\MinGW\bin;C:\Program Files (x86)\CMake\bin;
   - mkdir build
   - cd build
   - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" ..
