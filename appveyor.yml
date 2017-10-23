@@ -1,12 +1,16 @@
 version: build{build}
 image: Visual Studio 2015
 
+init:
+  - set ORIGPATH=%PATH%
+
 build_script:
   - set PATH=C:\Qt\5.9.1\mingw53_32\bin;C:\MinGW\bin;C:\Program Files (x86)\CMake\bin;
   - mkdir build
   - cd build
   - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="C:/projects/unitsys/install" ..
   - cmake --build . --target install --config Release
+  - set PATH=%ORIGPATH%
   
 after_build:
   - cd C:/projects/unitsys/install
