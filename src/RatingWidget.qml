@@ -16,7 +16,7 @@ Item {
         var starOutline = "qrc:/icons/star-outline.svg"
         var star = "qrc:/icons/star.svg"
         for (var i = 0; i < 5; i++) {
-            if (rating < 0.5)
+            if (rating <= 0 )
                 stars[i].source = starOutline
             else
                 stars[i].source = star
