@@ -652,7 +652,7 @@ ApplicationWindow {
                             }
                         }
                         onWidthChanged: {
-                            text = titleTextMetrics.getElidedText( plot, width )
+                            text = titleTextMetrics.getElidedText( title, width )
                         }
                         Component.onCompleted: {
                             var pos = text.search( searchTextField.text )
@@ -689,7 +689,7 @@ ApplicationWindow {
                             }
                         }
                         onWidthChanged: {
-                            text = titleOriginalTextMetrics.getElidedText( plot, width )
+                            text = titleOriginalTextMetrics.getElidedText( title_original, width )
                         }
                         Component.onCompleted: {
                             var pos = text.search( searchTextField.text )
