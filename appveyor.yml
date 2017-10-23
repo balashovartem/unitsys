@@ -1,12 +1,21 @@
 version: build{build}
+image: Visual Studio 2015
 
+init:
+  - set ORIGPATH=%PATH%
 
 build_script:
-  - set PATH=C:\Qt\5.9.1\bin;
+  - set PATH=C:\Qt\5.9.1\mingw53_32\bin;C:\MinGW\bin;C:\Program Files (x86)\CMake\bin;
+  - mkdir build
   - cd build
-  - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" ..
-  - cmake --build . --config %BUILD_TYPE% 
-
+  - cmake -G "MinGW Makefiles" -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="C:/projects/unitsys/install" ..
+  - cmake --build . --target install --config Release 
+  - set PATH=%ORIGPATH%
+  
+after_build:
+  - cd C:/projects/unitsys/install
+  - set buildname=build%APPVEYOR_BUILD_NUMBER%_%APPVEYOR_REPO_COMMIT:~0,7%
+  - 7z a %example%_%buildname%_%name%.7z *
 
 environment:
   matrix:
@@ -15,4 +24,4 @@ environment:
       platform: mingw
 
 artifacts:
-  - path: 'c:/dev/install/bin/*'
+  - path: 'install/*.7z'
