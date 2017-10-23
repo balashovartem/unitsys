@@ -32,7 +32,8 @@ class UnitSysRole : public QObject
 
         enum Role
         {
-            Title = Qt::UserRole +1,
+            Id = Qt::UserRole +1,
+            Title,
             TitleOriginal,
             Genre,
             Year,
