@@ -32,5 +32,13 @@ add_executable( ${PROJECT_NAME} ${SOURCES} ${HEADERS} ${MOC_SOURCES} ${ODB_SOURC
 
 target_link_libraries( ${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Widgets Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Sql Qt5::QuickControls2 )
 
+if (WIN32)
+    get_target_property(QT5_QMAKE_EXECUTABLE Qt5::qmake IMPORTED_LOCATION)
+    get_filename_component(QT5_WINDEPLOYQT_EXECUTABLE ${QT5_QMAKE_EXECUTABLE} PATH)
+    set(QT5_WINDEPLOYQT_EXECUTABLE "${QT5_WINDEPLOYQT_EXECUTABLE}/windeployqt.exe")
+
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${QT5_WINDEPLOYQT_EXECUTABLE} --qmldir ${CMAKE_SOURCE_DIR} $<TARGET_FILE_DIR:foot_scanner>)
+endif(WIN32)
+
 install(TARGETS ${PROJECT_NAME} DESTINATION . )
 
