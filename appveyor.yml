@@ -24,4 +24,4 @@ environment:
       platform: mingw
 
 artifacts:
-  - path: 'C:/projects/unitsys/install/*.7z'
+  - path: 'install/*.7z'
