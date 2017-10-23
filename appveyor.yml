@@ -5,11 +5,13 @@ build_script:
   - set PATH=C:\Qt\5.9.1\mingw53_32\bin;C:\MinGW\bin;C:\Program Files (x86)\CMake\bin;
   - mkdir build
   - cd build
-  - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" ..
+  - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="C:/projects/unitsys/install" ..
   - cmake --build . --target install --config Release
   
 after_build:
-  - cd c:\dev\install
+  - cd C:/projects/unitsys/install
+  - set buildname=build%APPVEYOR_BUILD_NUMBER%_%APPVEYOR_REPO_COMMIT:~0,7%
+  - 7z a %example%_%buildname%_%name%.7z *
 
 environment:
   matrix:
@@ -18,4 +20,4 @@ environment:
       platform: mingw
 
 artifacts:
-  - path: 'c:/dev/install/bin/*.7z'
+  - path: 'C:/projects/unitsys/install/*.7z'
